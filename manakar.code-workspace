@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "files.associations": {
+      "*.gs": "javascript"
+    },
+    "emmet.includeLanguages": {
+      "javascript": "html"
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.git": true
+    },
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-rename-tag",
+      "ritwickdey.LiveServer",
+      "bradlc.vscode-tailwindcss",
+      "christian-kohler.path-intellisense"
+    ]
+  }
+}

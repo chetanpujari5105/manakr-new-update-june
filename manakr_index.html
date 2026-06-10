@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" style="overflow-x:hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>मनाकार | Manakar — Clinical Psychology & Mental Health Care in Pune</title>
+    <meta name="description" content="Manakar is a clinical psychology practice by Ms. Sayli A. Kharche in Pune, offering individual therapy, child & adolescent therapy, couple counseling, psychological assessments, and online sessions across India.">
+
+    <!-- ===== SECURITY LAYER (v14-final) ===== -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- reCAPTCHA v3: Site key 6LfE8ossAAAAAA9dWmDVhYtDSEEcEs7Kn4d9-lWW — v15-fix: Bug #3 updated key -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfE8ossAAAAAA9dWmDVhYtDSEEcEs7Kn4d9-lWW"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <!-- TODO: v15-fix Bug #6 — Replace Tailwind CDN with compiled CSS before scaling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: '#A8B5A2',
+                        'warm-beige': '#F5EDE3',
+                        'soft-teal': '#6B9E9B',
+                        'off-white': '#FAFAF7',
+                        charcoal: '#2D2D2D',
+                        'dusty-rose': '#D4B5B0',
+                        'teal-hover': '#5A8A87',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        lora: ['Lora', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'soft-hover': '0 8px 30px -2px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.344.0"></script> <!-- v15-fix: Bug #7 — pinned Lucide version to prevent breaking changes -->
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Lora', serif;
+            color: #2D2D2D;
+            background-color: #FAFAF7;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5EDE3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A8B5A2;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B9E9B;
+        }
+
+        /* Hero gradient overlay */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(245, 237, 227, 0.95) 0%, rgba(245, 237, 227, 0.7) 50%, rgba(250, 250, 247, 0.4) 100%);
+        }
+
+        /* Bouncing scroll indicator */
+        @keyframes bounce-gentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        .bounce-gentle {
+            animation: bounce-gentle 2s infinite;
+        }
+
+        /* Timeline connector */
+        .timeline-line {
+            background-image: linear-gradient(to bottom, #6B9E9B 50%, transparent 50%);
+            background-size: 2px 20px;
+            background-repeat: repeat-y;
+        }
+
+        /* FAQ accordion transition */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .faq-content.active {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile menu transition */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 49;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+        }
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        /* Parallax effect */
+        .parallax-bg {
+            will-change: transform;
+        }
+
+        /* Testimonial carousel */
+        .testimonial-slide {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        /* WhatsApp float animation */
+        @keyframes pulse-soft {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-soft 2s infinite;
+        }
+
+        /* Mobile timeline classes removed - using card layout now */
+
+        /* SELF-CHECK MODAL STYLES */
+        .selfcheck-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .selfcheck-overlay.active {
+            display: flex;
+        }
+        .selfcheck-modal {
+            background: #FAFAF7;
+            border-radius: 1.5rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 639px) {
+            .selfcheck-modal {
+                padding: 1.25rem;
+                border-radius: 1rem;
+                margin: 0.5rem;
+                max-height: 80vh;
+            }
+            .selfcheck-modal h3 {
+                font-size: 1.1rem !important;
+            }
+            .selfcheck-option {
+                padding: 0.7rem 1rem !important;
+                font-size: 0.88rem !important;
+            }
+        }
+        .selfcheck-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #A8B5A2;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .selfcheck-close:hover {
+            background: #6B9E9B;
+        }
+        .selfcheck-progress {
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .selfcheck-progress-bar {
+            height: 100%;
+            background: #6B9E9B;
+            border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+        .selfcheck-option {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.85rem 1.2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            color: #2D2D2D;
+            margin-bottom: 0.5rem;
+        }
+        .selfcheck-option:hover {
+            border-color: #A8B5A2;
+            background: #f0f5ee;
+        }
+        .selfcheck-option.selected {
+            border-color: #6B9E9B;
+            background: #e8f4f3;
+        }
+        .selfcheck-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+        .selfcheck-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            padding: 0.7rem 1.8rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .selfcheck-btn-back {
+            background: #e5e7eb;
+            color: #2D2D2D;
+        }
+        .selfcheck-btn-back:hover {
+            background: #d1d5db;
+        }
+        .selfcheck-btn-next {
+            background: #6B9E9B;
+            color: white;
+        }
+        .selfcheck-btn-next:hover {
+            background: #5A8A87;
+        }
+        .selfcheck-btn-next:disabled {
+            background: #c5d1d0;
+            cursor: not-allowed;
+        }
+        .selfcheck-result {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .selfcheck-result-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* PERFORMANCE & MOBILE FIXES */
+        * { -webkit-tap-highlight-color: transparent; }
+        img { content-visibility: auto; }
+        @media (max-width: 767px) {
+            .parallax-bg { will-change: auto !important; }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                    <img src="logo.png" onerror="this.style.display='none'" alt="Manakar Logo" class="h-10 md:h-11 w-auto object-contain">
+                    <span class="font-poppins text-2xl font-semibold text-charcoal">मनाकार</span>
+                    <span class="font-poppins text-xl font-medium text-charcoal/60">|</span>
+                    <span class="font-poppins text-xl font-medium text-charcoal">Manakar</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">Home</a>
+                    <a href="#about" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">About</a>
+                    <a href="#services" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">Services</a>
+                    <a href="#approach" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">Approach</a>
+                    <a href="#resources" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">Resources</a>
+                    <a href="#testimonials" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">Testimonials</a>
+                    <a href="#contact" class="font-poppins text-sm font-medium text-charcoal hover:text-soft-teal transition-colors">Contact</a>
+
+
+                    <a href="#contact" class="font-poppins text-sm font-medium bg-soft-teal text-white px-6 py-2.5 rounded-full hover:bg-teal-hover transition-all transform hover:scale-105 shadow-soft">
+                        Book Appointment
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-charcoal hover:text-soft-teal focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-screen bg-off-white shadow-2xl z-50 md:hidden overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="font-poppins text-xl font-semibold text-charcoal">Menu</span>
+                    <button id="close-menu-btn" class="text-charcoal hover:text-soft-teal">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">Home</a>
+                    <a href="#about" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">About</a>
+                    <a href="#services" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">Services</a>
+                    <a href="#approach" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">Approach</a>
+                    <a href="#resources" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">Resources</a>
+                    <a href="#testimonials" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">Testimonials</a>
+                    <a href="#contact" class="font-poppins text-lg font-medium text-charcoal hover:text-soft-teal py-2 border-b border-sage/20">Contact</a>
+                    <a href="#contact" class="mt-4 font-poppins text-center font-medium bg-soft-teal text-white px-6 py-3 rounded-full hover:bg-teal-hover transition-all">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image with Parallax -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2560&auto=format&fit=crop')] bg-cover bg-center parallax-bg" id="hero-bg"></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <p class="font-poppins text-sm font-semibold tracking-[0.2em] text-soft-teal uppercase mb-4">
+                        Welcome to Manakar
+                    </p>
+                    <h1 class="font-poppins text-5xl md:text-6xl font-bold text-charcoal leading-tight mb-6">
+                        Your Mind Deserves Care
+                    </h1>
+                    <p class="font-lora text-lg md:text-xl text-charcoal/80 mb-8 leading-relaxed max-w-lg">
+                        Ms. Sayli A. Kharche — Clinical Psychologist | Helping you navigate life's challenges with compassion, clarity, and evidence-based care.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="font-poppins font-medium bg-soft-teal text-white px-8 py-4 rounded-full hover:bg-teal-hover transition-all transform hover:scale-103 shadow-soft inline-flex items-center gap-2">
+                            Book Appointment
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#about" class="font-poppins font-medium bg-warm-beige text-charcoal px-8 py-4 rounded-full hover:bg-sage hover:text-white transition-all inline-flex items-center gap-2 shadow-soft border border-charcoal/20">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Manakar Card -->
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="relative hidden md:flex items-center justify-center">
+                    <div class="relative">
+                        <img src="manakar-card.jpg" onerror="this.style.display='none'" 
+                             alt="Manakar Psychotherapy Clinic — Sayli A Kharche, Clinical Psychologist (RCI Licensed)" 
+                             class="relative w-full max-w-lg h-auto rounded-3xl shadow-2xl"
+                             style="aspect-ratio: 16/9; object-fit: cover;">
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-2xl px-6 py-3 shadow-soft" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-sage/20 p-2 rounded-full">
+                                    <i data-lucide="shield-check" class="w-6 h-6 text-sage"></i>
+                                </div>
+                                <div>
+                                    <p class="font-poppins font-semibold text-charcoal text-sm">RCI Licensed</p>
+                                    <p class="font-lora text-xs text-charcoal/60">Clinical Psychologist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 bounce-gentle cursor-pointer" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+            <div class="flex flex-col items-center gap-2 text-charcoal/60 hover:text-soft-teal transition-colors">
+                <span class="font-poppins text-xs tracking-wider">Scroll</span>
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-warm-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div data-aos="fade-right" class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-soft">
+                        <img src="sayli-photo.jpg" onerror="this.style.display='none'" 
+                             alt="Ms. Sayli A. Kharche - Clinical Psychologist" 
+                             class="w-full h-[500px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-soft max-w-xs hidden md:block">
+                        <p class="font-lora text-charcoal/80 italic text-sm">"Healing begins with feeling safe enough to be vulnerable."</p>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div data-aos="fade-left">
+                    <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                        Hi, I'm Sayli — and I'm Here to Help You Heal
+                    </h2>
+                    <div class="font-lora text-lg text-charcoal/80 leading-relaxed space-y-4 mb-8">
+                        <p>
+                            I'm Sayli A. Kharche, a licensed Clinical Psychologist based in Pune with over 5 years of experience in mental health care. I hold an M.Phil in Clinical Psychology and am registered with the Rehabilitation Council of India (RCI).
+                        </p>
+                        <p>
+                            Over the years, I've had the privilege of working with people from all walks of life — children struggling with learning difficulties, teenagers battling anxiety, adults dealing with depression and burnout, couples trying to rebuild trust, and families learning to communicate better.
+                        </p>
+                        <p>
+                            My approach is simple: I listen without judgment, I understand with empathy, and I work with you to find practical solutions that actually fit your life. Whether it's through Cognitive Behavioral Therapy (CBT), mindfulness-based techniques, or supportive counseling — I tailor every session to what YOU need.
+                        </p>
+                        <p>
+                            I started Manakar with a belief that mental health care should feel safe, approachable, and human. You don't need to have a "big problem" to seek help. Sometimes, just having someone to talk to can change everything.
+                        </p>
+                        <p class="font-medium text-charcoal">
+                            If you've been thinking about therapy but aren't sure — take that first step. I promise, it's easier than you think.
+                        </p>
+                    </div>
+
+                    <!-- Credentials -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="font-poppins text-sm font-medium bg-white px-4 py-2 rounded-full shadow-soft text-charcoal border border-sage/20">
+                            M.Phil Clinical Psychology
+                        </span>
+                        <span class="font-poppins text-sm font-medium bg-white px-4 py-2 rounded-full shadow-soft text-charcoal border border-sage/20">
+                            RCI Licensed &middot; A118712
+                        </span>
+                        <span class="font-poppins text-sm font-medium bg-white px-4 py-2 rounded-full shadow-soft text-charcoal border border-sage/20">
+                            5+ Years Experience
+                        </span>
+                        <span class="font-poppins text-sm font-medium bg-white px-4 py-2 rounded-full shadow-soft text-charcoal border border-sage/20">
+                            500+ Lives Touched
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-off-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">
+                    How Can I Help You?
+                </h2>
+                <p class="font-lora text-lg text-charcoal/70">
+                    Every journey is unique. Explore the services tailored to support your well-being.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 - Individual Therapy -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="brain" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Individual Therapy</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Personalized one-on-one sessions to help you work through anxiety, depression, stress, trauma, and other personal challenges at your own pace.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 - Child & Adolescent Therapy -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="smile" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Child & Adolescent Therapy</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Specialized support for children and teenagers dealing with behavioral issues, learning difficulties, emotional challenges, exam stress, and developmental concerns in a safe, playful environment.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 - Couple & Family Therapy -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="heart-handshake" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Couple & Family Therapy</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Strengthen your relationships through guided conversations that improve communication, rebuild trust, resolve conflicts, and bring families closer together.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 - Cognitive Retraining -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="refresh-cw" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Cognitive Retraining</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Structured exercises and techniques designed to improve memory, attention, problem-solving, and other thinking skills affected by injury, illness, or mental health conditions.
+                    </p>
+                </div>
+
+                <!-- Service Card 5 - Supportive Therapy -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="handshake" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Supportive Therapy</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        A safe, empathetic space where you can express your thoughts and feelings freely. Supportive therapy helps you cope with life's challenges, build emotional strength, and feel heard.
+                    </p>
+                </div>
+
+                <!-- Service Card 6 - Corporate Wellness -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="building-2" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Corporate Wellness</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Workshops, stress management programs, and employee wellness initiatives designed to foster a healthier, more productive workplace culture.
+                    </p>
+                </div>
+
+                <!-- Service Card 7 - Online Sessions -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="video" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Online Sessions</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Convenient and confidential virtual therapy sessions from the comfort of your home. Available across India via secure video platforms.
+                    </p>
+                </div>
+
+                <!-- Service Card 8 - Psychological Assessments -->
+                <div class="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-soft-teal" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-14 h-14 bg-sage/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-soft-teal/20 transition-colors">
+                        <i data-lucide="clipboard-list" class="w-7 h-7 text-sage group-hover:text-soft-teal transition-colors"></i>
+                    </div>
+                    <h3 class="font-poppins text-xl font-semibold text-charcoal mb-3">Psychological Assessments</h3>
+                    <p class="font-lora text-charcoal/70 leading-relaxed">
+                        Comprehensive psychological testing including IQ assessment, personality profiling, career aptitude, autism spectrum evaluation, neuropsychological assessment, learning disability screening, and clinical diagnosis — all using standardized tools with detailed written reports provided.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach / Journey Section -->
+    <section id="approach" class="py-20 md:py-32 bg-warm-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">
+                    Your Journey With Manakar
+                </h2>
+                <p class="font-lora text-lg text-charcoal/70">
+                    A simple, supportive process designed around your comfort and growth.
+                </p>
+            </div>
+
+            <!-- DESKTOP: Zigzag timeline (hidden on mobile) -->
+            <div class="relative hidden md:block">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-line"></div>
+                <div class="space-y-0">
+                    <div class="relative flex items-center justify-between" data-aos="fade-up">
+                        <div class="w-5/12 text-right pr-12">
+                            <h3 class="font-poppins text-xl font-semibold text-charcoal mb-2">Reach Out</h3>
+                            <p class="font-lora text-charcoal/70">Book your appointment through our website, WhatsApp, or call. No pressure, no judgment.</p>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-lg shadow-soft z-10">1</div>
+                        <div class="w-5/12 pl-12"></div>
+                    </div>
+                    <div class="relative flex items-center justify-between mt-12" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-5/12 pr-12"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-lg shadow-soft z-10">2</div>
+                        <div class="w-5/12 pl-12 text-left">
+                            <h3 class="font-poppins text-xl font-semibold text-charcoal mb-2">First Session</h3>
+                            <p class="font-lora text-charcoal/70">We will have a warm, non-judgmental, and confidential discussion to understand your needs and emotions, and set goals together.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center justify-between mt-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-5/12 text-right pr-12">
+                            <h3 class="font-poppins text-xl font-semibold text-charcoal mb-2">Your Plan</h3>
+                            <p class="font-lora text-charcoal/70">A personalized therapy plan is crafted using evidence-based approaches suited to fulfill your needs and goals.</p>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-lg shadow-soft z-10">3</div>
+                        <div class="w-5/12 pl-12"></div>
+                    </div>
+                    <div class="relative flex items-center justify-between mt-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-5/12 pr-12"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-lg shadow-soft z-10">4</div>
+                        <div class="w-5/12 pl-12 text-left">
+                            <h3 class="font-poppins text-xl font-semibold text-charcoal mb-2">Heal &amp; Grow</h3>
+                            <p class="font-lora text-charcoal/70">Through regular sessions, track your progress and build lasting resilience and well-being.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE: Clean vertical card list -->
+            <div class="md:hidden space-y-4" data-aos="fade-up">
+                <div class="bg-white rounded-2xl p-5 shadow-soft flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-base shadow-soft">1</div>
+                    <div>
+                        <h3 class="font-poppins text-base font-semibold text-charcoal mb-1">Reach Out</h3>
+                        <p class="font-lora text-sm text-charcoal/70 leading-relaxed">Book your appointment through our website, WhatsApp, or call. No pressure, no judgment.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-soft flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-base shadow-soft">2</div>
+                    <div>
+                        <h3 class="font-poppins text-base font-semibold text-charcoal mb-1">First Session</h3>
+                        <p class="font-lora text-sm text-charcoal/70 leading-relaxed">We will have a warm, non-judgmental, and confidential discussion to understand your needs and emotions, and set goals together.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-soft flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-base shadow-soft">3</div>
+                    <div>
+                        <h3 class="font-poppins text-base font-semibold text-charcoal mb-1">Your Plan</h3>
+                        <p class="font-lora text-sm text-charcoal/70 leading-relaxed">A personalized therapy plan is crafted using evidence-based approaches suited to fulfill your needs and goals.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-soft flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-soft-teal rounded-full flex items-center justify-center text-white font-poppins font-bold text-base shadow-soft">4</div>
+                    <div>
+                        <h3 class="font-poppins text-base font-semibold text-charcoal mb-1">Heal &amp; Grow</h3>
+                        <p class="font-lora text-sm text-charcoal/70 leading-relaxed">Through regular sessions, track your progress and build lasting resilience and well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose Section -->
+    <section class="py-20 md:py-32 bg-off-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal">Why Manakar?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield" class="w-8 h-8 text-sage"></i>
+                    </div>
+                    <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">Safe & Confidential</h3>
+                    <p class="font-lora text-sm text-charcoal/70">Your privacy is our top priority. Every session is 100% confidential.</p>
+                </div>
+
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="microscope" class="w-8 h-8 text-sage"></i>
+                    </div>
+                    <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">Evidence-Based</h3>
+                    <p class="font-lora text-sm text-charcoal/70">Therapies grounded in science — CBT, DBT, Mindfulness, and more.</p>
+                </div>
+
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="heart" class="w-8 h-8 text-sage"></i>
+                    </div>
+                    <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">Compassionate Care</h3>
+                    <p class="font-lora text-sm text-charcoal/70">A warm, non-judgmental space where you are truly heard.</p>
+                </div>
+
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="calendar-clock" class="w-8 h-8 text-sage"></i>
+                    </div>
+                    <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">Flexible Options</h3>
+                    <p class="font-lora text-sm text-charcoal/70">In-clinic and online sessions to fit your schedule and comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Assessment CTA -->
+    <section class="py-16 bg-warm-beige relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-sage/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-soft-teal/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">
+                Not Sure If You Need Therapy?
+            </h2>
+            <p class="font-lora text-lg text-charcoal/70 mb-8 max-w-2xl mx-auto">
+                Take our quick, anonymous self-check to understand your mental well-being better. It takes just 2-3 minutes.
+            </p>
+            <button onclick="openSelfCheck()" class="font-poppins font-medium bg-soft-teal text-white px-10 py-4 rounded-full hover:bg-teal-hover transition-all transform hover:scale-105 shadow-soft inline-flex items-center gap-2">
+                Take the Self-Check
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Self-Check Modal -->
+    <div id="selfCheckOverlay" class="selfcheck-overlay">
+        <div class="selfcheck-modal">
+            <button class="selfcheck-close" onclick="closeSelfCheck()" aria-label="Close">&times;</button>
+            <div id="selfCheckContent"></div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 md:py-32 bg-off-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">Words From Those Who Healed</h2>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto" data-aos="fade-up">
+                <!-- Testimonial Slider -->
+                <div class="relative overflow-hidden rounded-3xl bg-white shadow-soft px-14 py-8 md:px-16 md:py-12">
+                    <div class="absolute top-6 left-6 text-dusty-rose/30">
+                        <i data-lucide="quote" class="w-16 h-16"></i>
+                    </div>
+
+                    <div id="testimonial-container" class="relative">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide text-center" data-index="0">
+                            <p class="font-lora text-xl md:text-2xl text-charcoal italic leading-relaxed mb-6">
+                                "Manakar gave me the courage to face my fears. Ms. Sayli's patience and warmth made all the difference. I finally feel like myself again."
+                            </p>
+                            <p class="font-poppins font-medium text-charcoal/60">— A.R., Pune</p>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide text-center absolute inset-0 opacity-0 pointer-events-none" data-index="1">
+                            <p class="font-lora text-xl md:text-2xl text-charcoal italic leading-relaxed mb-6">
+                                "My child has shown incredible improvement since we started therapy. The sessions are so thoughtfully designed — my little one actually looks forward to going!"
+                            </p>
+                            <p class="font-poppins font-medium text-charcoal/60">— P.M., Mumbai</p>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide text-center absolute inset-0 opacity-0 pointer-events-none" data-index="2">
+                            <p class="font-lora text-xl md:text-2xl text-charcoal italic leading-relaxed mb-6">
+                                "I was skeptical about therapy, but Ms. Kharche made me feel safe from the very first session. Her approach is both professional and deeply human."
+                            </p>
+                            <p class="font-poppins font-medium text-charcoal/60">— S.D., Pune</p>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-slide text-center absolute inset-0 opacity-0 pointer-events-none" data-index="3">
+                            <p class="font-lora text-xl md:text-2xl text-charcoal italic leading-relaxed mb-6">
+                                "After years of bottling up my emotions, I finally found a space where I could be myself. Ms. Sayli helped me understand my anxiety and gave me real tools to manage it."
+                            </p>
+                            <p class="font-poppins font-medium text-charcoal/60">— R.K., Kochi</p>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-slide text-center absolute inset-0 opacity-0 pointer-events-none" data-index="4">
+                            <p class="font-lora text-xl md:text-2xl text-charcoal italic leading-relaxed mb-6">
+                                "We were on the verge of giving up on our marriage. Couple therapy at Manakar helped us communicate again. We're stronger now than ever before."
+                            </p>
+                            <p class="font-poppins font-medium text-charcoal/60">— N.S., Thiruvananthapuram</p>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="testimonial-slide text-center absolute inset-0 opacity-0 pointer-events-none" data-index="5">
+                            <p class="font-lora text-xl md:text-2xl text-charcoal italic leading-relaxed mb-6">
+                                "The neuropsychological assessment for my son was so thorough and detailed. Ms. Kharche explained everything clearly and gave us a clear path forward. Truly grateful."
+                            </p>
+                            <p class="font-poppins font-medium text-charcoal/60">— D.M., Bengaluru</p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button onclick="changeTestimonial(-1)" class="absolute left-1 md:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-md hover:bg-sage/20 flex items-center justify-center transition-colors z-10">
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-charcoal"></i>
+                    </button>
+                    <button onclick="changeTestimonial(1)" class="absolute right-1 md:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-md hover:bg-sage/20 flex items-center justify-center transition-colors z-10">
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-charcoal"></i>
+                    </button>
+
+                    <!-- Dots -->
+                    <div class="flex justify-center gap-2 mt-8">
+                        <button onclick="goToTestimonial(0)" class="testimonial-dot w-2 h-2 rounded-full bg-soft-teal transition-all" data-index="0"></button>
+                        <button onclick="goToTestimonial(1)" class="testimonial-dot w-2 h-2 rounded-full bg-sage/30 hover:bg-sage/50 transition-all" data-index="1"></button>
+                        <button onclick="goToTestimonial(2)" class="testimonial-dot w-2 h-2 rounded-full bg-sage/30 hover:bg-sage/50 transition-all" data-index="2"></button>
+                        <button onclick="goToTestimonial(3)" class="testimonial-dot w-2 h-2 rounded-full bg-sage/30 hover:bg-sage/50 transition-all" data-index="3"></button>
+                        <button onclick="goToTestimonial(4)" class="testimonial-dot w-2 h-2 rounded-full bg-sage/30 hover:bg-sage/50 transition-all" data-index="4"></button>
+                        <button onclick="goToTestimonial(5)" class="testimonial-dot w-2 h-2 rounded-full bg-sage/30 hover:bg-sage/50 transition-all" data-index="5"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 md:py-32 bg-warm-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">Mental Health Resources</h2>
+                <p class="font-lora text-lg text-charcoal/70">Insights and guidance for your well-being journey</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Blog Card 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-48 bg-sage/20 overflow-hidden">
+                        <img src="article-mental-illness.jpg" onerror="this.parentElement.style.background='#A8B5A2'" alt="What Is Mental Illness" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">What Is Mental Illness, Really? Let's Talk About It Like Normal People.</h3>
+                        <p class="font-lora text-sm text-charcoal/70 mb-4 line-clamp-2">
+                            Mental illness is more common than you think — and more misunderstood than it should be. Let's break it down in plain, simple language.
+                        </p>
+                        <a href="https://open.substack.com/pub/manakarpsych/p/what-is-mental-illness-really-lets" target="_blank" rel="noopener noreferrer" class="font-poppins text-sm font-medium text-soft-teal hover:text-teal-hover inline-flex items-center gap-1 group">
+                            Read More 
+                            <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-sage/20 overflow-hidden">
+                        <img src="article-psychotherapy.jpg" onerror="this.parentElement.style.background='#A8B5A2'" alt="Psychotherapy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">Psychotherapy: The Thing Everyone Needs But Nobody Talks About</h3>
+                        <p class="font-lora text-sm text-charcoal/70 mb-4 line-clamp-2">
+                            What actually happens in therapy? Why does it work? And why should you consider it even if you think you're "fine"? Let's talk.
+                        </p>
+                        <a href="https://open.substack.com/pub/manakarpsych/p/psychotherapy-the-thing-everyone" target="_blank" rel="noopener noreferrer" class="font-poppins text-sm font-medium text-soft-teal hover:text-teal-hover inline-flex items-center gap-1 group">
+                            Read More 
+                            <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-sage/20 overflow-hidden">
+                        <img src="article-myths.jpg" onerror="this.parentElement.style.background='#A8B5A2'" alt="10 Myths About Mental Health" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-poppins text-lg font-semibold text-charcoal mb-2">10 Myths About Mental Health That India Still Believes (And Why They're Dangerous)</h3>
+                        <p class="font-lora text-sm text-charcoal/70 mb-4 line-clamp-2">
+                            From "therapy is for crazy people" to "just think positive" — these myths are hurting millions. It's time to bust them with facts.
+                        </p>
+                        <a href="https://open.substack.com/pub/manakarpsych/p/10-myths-about-mental-health-that" target="_blank" rel="noopener noreferrer" class="font-poppins text-sm font-medium text-soft-teal hover:text-teal-hover inline-flex items-center gap-1 group">
+                            Read More 
+                            <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center">
+                <a href="https://manakarpsych.substack.com" target="_blank" rel="noopener noreferrer" class="font-poppins font-medium text-soft-teal hover:text-teal-hover inline-flex items-center gap-2 border-b-2 border-soft-teal hover:border-teal-hover transition-all pb-1">
+                    View All Articles
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 md:py-32 bg-warm-beige">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-poppins font-medium text-charcoal pr-4">What happens in the first session?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-sage flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="font-lora text-charcoal/70 leading-relaxed">
+                            The first session is a safe, informal conversation where we get to know each other. We'll discuss what brings you here, your goals, and how therapy can help. There's no pressure to share more than you're comfortable with.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-poppins font-medium text-charcoal pr-4">Is therapy confidential?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-sage flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="font-lora text-charcoal/70 leading-relaxed">
+                            Absolutely. Everything discussed in sessions is strictly confidential, in accordance with professional ethics and RCI guidelines. Your privacy is sacred to us.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-poppins font-medium text-charcoal pr-4">How long does each session last?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-sage flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="font-lora text-charcoal/70 leading-relaxed">
+                            A typical session lasts 45-60 minutes. The frequency and duration are tailored to your individual needs. Some clients prefer weekly sessions, while others may need bi-weekly or monthly visits.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-poppins font-medium text-charcoal pr-4">Do you offer online therapy?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-sage flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="font-lora text-charcoal/70 leading-relaxed">
+                            Yes, secure online sessions are available via video call for clients across India. Online therapy is just as effective as in-person sessions and offers the convenience of receiving care from your safe space.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-poppins font-medium text-charcoal pr-4">How do I know if I need therapy?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-sage flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="font-lora text-charcoal/70 leading-relaxed">
+                            If you're feeling overwhelmed, stuck, anxious, or simply want to understand yourself better — therapy can help. You don't need a crisis to seek support. Taking care of your mental health is a sign of strength.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-poppins font-medium text-charcoal pr-4">What are the fees?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-sage flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="font-lora text-charcoal/70 leading-relaxed">
+                            Session fees vary based on the type of service. Please contact us for detailed information. We believe mental health care should be accessible, and we can discuss options that work for your situation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-off-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-charcoal mb-4">Let's Begin Your Journey</h2>
+                <p class="font-lora text-lg text-charcoal/70">Reach out today. The first step is often the bravest.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-soft" data-aos="fade-right">
+                    <form id="contactForm" class="space-y-6" autocomplete="off">
+              <!-- Honeypot anti-spam (invisible to users) -->
+              <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true"><input type="text" id="_mhp" name="_honeypot" tabindex="-1" autocomplete="off"></div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Name *</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora" placeholder="Your full name" minlength="2">
+                            </div>
+                            <div>
+                                <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Phone *</label>
+                                <input type="tel" name="phone" id="phoneInput" required minlength="10" maxlength="15" class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora" placeholder="e.g. 9876543210"> <!-- v15-fix: Bug #2 -->
+                                <p id="phoneError" class="font-poppins text-xs text-red-500 mt-1 hidden"></p>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Email *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora" placeholder="your@email.com">
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Service</label>
+                                <select required name="service" class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora bg-white">
+                    <option value="">Select a service</option> <!-- v15-fix: Bug #4 + Bug #5 -->
+                    <option value="Individual Therapy">Individual Therapy</option>
+                    <option value="Child &amp; Adolescent Therapy">Child &amp; Adolescent Therapy</option>
+                    <option value="Couple &amp; Family Therapy">Couple &amp; Family Therapy</option>
+                    <option value="Cognitive Retraining">Cognitive Retraining</option>
+                    <option value="Supportive Therapy">Supportive Therapy</option>
+                    <option value="Corporate Wellness">Corporate Wellness</option>
+                    <option value="Online Sessions">Online Sessions</option>
+                    <option value="Psychological Assessments">Psychological Assessments</option>
+                    </select>
+                            </div>
+                            <div>
+                                <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Preferred Date</label>
+                                <input required type="date" name="date" id="dateInput" class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Preferred Time</label>
+                                <select required name="time" id="timeSelect" class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora bg-white">
+                                    <option value="">Select a time slot</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="flex items-end">
+                                <p id="slotMessage" class="font-poppins text-sm hidden w-full"></p>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-poppins text-sm font-medium text-charcoal mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-sage/30 focus:border-soft-teal focus:ring-2 focus:ring-soft-teal/20 outline-none transition-all font-lora resize-none" placeholder="Tell us briefly what brings you here..."></textarea>
+                        </div>
+
+                        <!-- Success/Error Messages -->
+                        <div id="formMessage" class="hidden font-poppins text-sm p-4 rounded-xl"></div>
+
+                        
+              <!-- DPDPA Data Consent -->
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="consentCheckbox" name="consent" required 
+                  class="mt-1 w-4 h-4 accent-soft-teal rounded cursor-pointer flex-shrink-0">
+                <label for="consentCheckbox" class="font-lora text-sm text-charcoal/70 leading-relaxed cursor-pointer">
+                  I consent to Manakar collecting my personal information for appointment scheduling. 
+                  My data will be kept confidential. 
+                  <a href="#" onclick="document.getElementById('privacyModal').classList.add('active');document.body.style.overflow='hidden';return false;" 
+                    class="text-soft-teal hover:text-teal-hover underline font-medium">Privacy Policy</a>
+                </label>
+              </div>
+
+              <button type="submit" id="submitBtn" class="w-full font-poppins font-medium bg-soft-teal text-white px-8 py-4 rounded-full hover:bg-teal-hover transition-all transform hover:scale-[1.02] shadow-soft flex items-center justify-center gap-2">
+                            <span>Send Message</span>
+                            <svg id="loadingSpinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+                        <div class="w-12 h-12 bg-sage/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-sage"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-poppins font-semibold text-charcoal mb-1">Clinic Address</h3>
+                            <p class="font-lora text-charcoal/70">Amanora Ascent Tower, Amanora Park Town, Hadapsar, Pune, Maharashtra 411028</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+                        <div class="w-12 h-12 bg-sage/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="phone" class="w-6 h-6 text-sage"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-poppins font-semibold text-charcoal mb-1">Phone</h3>
+                            <p class="font-lora text-charcoal/70">+91 97308 77626</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+                        <div class="w-12 h-12 bg-sage/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="mail" class="w-6 h-6 text-sage"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-poppins font-semibold text-charcoal mb-1">Email</h3>
+                            <p class="font-lora text-charcoal/70">manakarpsych22@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+                        <div class="w-12 h-12 bg-sage/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="clock" class="w-6 h-6 text-sage"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-poppins font-semibold text-charcoal mb-1">Working Hours</h3>
+                            <p class="font-lora text-charcoal/70">Mon - Sat: 9:00 AM – 12:00 PM | 1:00 PM – 5:00 PM</p>
+                            <p class="font-lora text-sm text-charcoal/50">Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div class="rounded-2xl overflow-hidden shadow-soft" style="height:200px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.9478604!3d18.5167179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3003b749195%3A0x93ccb2fce3fb95fc!2sAmanora%20Ascent%20Tower!5e0!3m2!1sen!2sin!4v1710000000000"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/dir//Amanora+Ascent+Tower,+GW8X%2BM4Q,+Amanora+Park+Town,+Hadapsar,+Pune,+Maharashtra+411028/@18.4781013,73.9242248,15z/" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-2 font-poppins text-sm font-medium text-soft-teal hover:text-teal-hover transition-colors">
+                        <i data-lucide="navigation" class="w-4 h-4"></i>
+                        Get Directions
+                    </a>
+
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/psylikharche22" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-full shadow-soft flex items-center justify-center text-charcoal hover:text-soft-teal hover:shadow-soft-hover transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sayli-kharche-254977394" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-full shadow-soft flex items-center justify-center text-charcoal hover:text-soft-teal hover:shadow-soft-hover transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sayli.kharche.92" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-full shadow-soft flex items-center justify-center text-charcoal hover:text-soft-teal hover:shadow-soft-hover transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="bg-warm-beige pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="logo.png" onerror="this.style.display='none'" alt="Manakar Logo" class="h-8 w-auto object-contain"> <!-- v15-fix: Bug #9 -->
+                        <span class="font-poppins text-2xl font-semibold text-charcoal">मनाकार</span>
+                        <span class="font-poppins text-xl font-medium text-charcoal/60">|</span>
+                        <span class="font-poppins text-xl font-medium text-charcoal">Manakar</span>
+                    </div>
+                    <p class="font-lora text-charcoal/70 mb-4">Healing begins here.</p>
+                    <p class="font-lora text-sm text-charcoal/60">
+                        A safe space for mental health care in Pune, offering compassionate, evidence-based psychological services by Ms. Sayli A. Kharche.
+                    </p>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-poppins font-semibold text-charcoal mb-4">Quick Links</h4>
+                    <ul class="space-y-2 font-lora">
+                        <li><a href="#home" class="text-charcoal/70 hover:text-soft-teal transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-charcoal/70 hover:text-soft-teal transition-colors">About</a></li>
+                        <li><a href="#services" class="text-charcoal/70 hover:text-soft-teal transition-colors">Services</a></li>
+                        <li><a href="#resources" class="text-charcoal/70 hover:text-soft-teal transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="text-charcoal/70 hover:text-soft-teal transition-colors">Contact</a></li>
+                        <li><a href="#" onclick="document.getElementById('privacyModal').classList.add('active');document.body.style.overflow='hidden';return false;" class="text-charcoal/70 hover:text-soft-teal transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-poppins font-semibold text-charcoal mb-4">Connect</h4>
+                    <ul class="space-y-2 font-lora text-charcoal/70">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span id="footerEmail" class="select-all"></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +91 97308 77626
+                        </li>
+                    </ul>
+                    <div class="flex gap-3 mt-4">
+                        <a href="https://www.instagram.com/psylikharche22" target="_blank" rel="noopener noreferrer" class="text-charcoal/60 hover:text-soft-teal transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sayli-kharche-254977394" target="_blank" rel="noopener noreferrer" class="text-charcoal/60 hover:text-soft-teal transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sayli.kharche.92" target="_blank" rel="noopener noreferrer" class="text-charcoal/60 hover:text-soft-teal transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-sage/30 pt-8 text-center">
+                <p class="font-lora text-sm text-charcoal/60">
+                    &copy; 2026 मनाकार | Manakar. All rights reserved. | Designed with <span class="text-sage">💚</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button --> <!-- v15-fix: Bug #1 - phone number corrected -->
+    <a href="https://wa.me/919730877626" target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110 whatsapp-pulse flex items-center gap-2 group">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+        <span class="font-poppins text-sm font-medium max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">Chat with us</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize AOS Animation Library
+        AOS.init({
+            duration: window.innerWidth < 768 ? 400 : 800,
+            once: true,
+            offset: window.innerWidth < 768 ? 30 : 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        /* v15-fix: Bug #8 — removed unused lastScroll variable */
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-soft');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-soft');
+                navbar.classList.add('bg-transparent');
+            }
+            /* v15-fix: Bug #8 — removed unused lastScroll assignment */
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        const mobileOverlay = document.getElementById('mobile-menu-overlay');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        mobileOverlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-content').forEach(item => {
+                if (item !== content && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
+                }
+            });
+
+            // Toggle current FAQ
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Testimonial Slider - Updated for 6 testimonials
+        let currentTestimonial = 0;
+        const totalTestimonials = 6;
+        let autoSlideInterval;
+
+        function showTestimonial(index) {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.testimonial-dot');
+
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'absolute');
+                    slide.classList.add('relative');
+                } else {
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'absolute');
+                    slide.classList.remove('relative');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-sage/30');
+                    dot.classList.add('bg-soft-teal');
+                } else {
+                    dot.classList.add('bg-sage/30');
+                    dot.classList.remove('bg-soft-teal');
+                }
+            });
+
+            currentTestimonial = index;
+        }
+
+        function changeTestimonial(direction) {
+            let newIndex = currentTestimonial + direction;
+            if (newIndex < 0) newIndex = totalTestimonials - 1;
+            if (newIndex >= totalTestimonials) newIndex = 0;
+            showTestimonial(newIndex);
+            resetAutoSlide();
+        }
+
+        function goToTestimonial(index) {
+            showTestimonial(index);
+            resetAutoSlide();
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                changeTestimonial(1);
+            }, 5000);
+        }
+
+        // Initialize auto-slide
+        resetAutoSlide();
+
+        // Parallax Effect for Hero (optimized, disabled on mobile)
+        if (window.innerWidth >= 768) {
+            let parallaxTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!parallaxTicking) {
+                    window.requestAnimationFrame(() => {
+                        const scrolled = window.pageYOffset;
+                        const parallax = document.getElementById('hero-bg');
+                        if (parallax) {
+                            parallax.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
+                        }
+                        parallaxTicking = false;
+                    });
+                    parallaxTicking = true;
+                }
+            }, { passive: true });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ===== SELF-CHECK QUIZ =====
+        const selfCheckQuestions = [
+            {
+                q: "Been able to concentrate on what you're doing?",
+                opts: ["Better than usual", "Same as usual", "Less than usual", "Much less than usual"]
+            },
+            {
+                q: "Lost much sleep over worry?",
+                opts: ["Not at all", "No more than usual", "Rather more than usual", "Much more than usual"]
+            },
+            {
+                q: "Felt you were playing a useful part in things?",
+                opts: ["More so than usual", "Same as usual", "Less useful than usual", "Much less useful"]
+            },
+            {
+                q: "Felt capable of making decisions about things?",
+                opts: ["More so than usual", "Same as usual", "Less so than usual", "Much less capable"]
+            },
+            {
+                q: "Felt constantly under strain?",
+                opts: ["Not at all", "No more than usual", "Rather more than usual", "Much more than usual"]
+            },
+            {
+                q: "Felt you couldn't overcome your difficulties?",
+                opts: ["Not at all", "No more than usual", "Rather more than usual", "Much more than usual"]
+            },
+            {
+                q: "Been able to enjoy your normal day-to-day activities?",
+                opts: ["More so than usual", "Same as usual", "Less so than usual", "Much less than usual"]
+            },
+            {
+                q: "Been able to face up to your problems?",
+                opts: ["More so than usual", "Same as usual", "Less so than usual", "Much less able"]
+            },
+            {
+                q: "Been feeling unhappy and depressed?",
+                opts: ["Not at all", "No more than usual", "Rather more than usual", "Much more than usual"]
+            },
+            {
+                q: "Been losing confidence in yourself?",
+                opts: ["Not at all", "No more than usual", "Rather more than usual", "Much more than usual"]
+            },
+            {
+                q: "Been thinking of yourself as a worthless person?",
+                opts: ["Not at all", "No more than usual", "Rather more than usual", "Much more than usual"]
+            },
+            {
+                q: "Been feeling reasonably happy, all things considered?",
+                opts: ["More so than usual", "About same as usual", "Less so than usual", "Much less than usual"]
+            }
+        ];
+
+        let scAnswers = new Array(12).fill(-1);
+        let scStep = 0;
+
+        function openSelfCheck() {
+            scAnswers = new Array(12).fill(-1);
+            scStep = 0;
+            document.getElementById('selfCheckOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            renderSCQuestion();
+        }
+
+        function closeSelfCheck() {
+            document.getElementById('selfCheckOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on overlay click
+        document.getElementById('selfCheckOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeSelfCheck();
+        });
+
+        function renderSCQuestion() {
+            const container = document.getElementById('selfCheckContent');
+            const q = selfCheckQuestions[scStep];
+            const progress = ((scStep) / 12) * 100;
+
+            let html = '<div style="margin-bottom:0.5rem;">';
+            html += '<h3 class="font-poppins text-xl md:text-2xl font-bold text-charcoal" style="margin-bottom:0.25rem;">Quick Mental Well-being Check (GHQ-12)</h3>';
+            html += '<p class="font-lora text-sm text-charcoal/60" style="margin-bottom:1rem;">Answer these 12 simple questions honestly. They are based on the GHQ-12 (General Health Questionnaire).</p>';
+            html += '</div>';
+            html += '<div class="selfcheck-progress"><div class="selfcheck-progress-bar" style="width:' + progress + '%"></div></div>';
+            html += '<p class="font-poppins text-xs text-charcoal/50" style="margin-bottom:1rem;">Question ' + (scStep + 1) + ' of 12</p>';
+            html += '<p class="font-poppins text-base font-semibold text-charcoal" style="margin-bottom:1rem;">' + q.q + '</p>';
+
+            for (let i = 0; i < q.opts.length; i++) {
+                const selected = scAnswers[scStep] === i ? ' selected' : '';
+                html += '<button class="selfcheck-option' + selected + '" onclick="selectSCOption(' + i + ')">' + String.fromCharCode(65 + i) + ') ' + q.opts[i] + '</button>';
+            }
+
+            html += '<div class="selfcheck-nav">';
+            if (scStep > 0) {
+                html += '<button class="selfcheck-btn selfcheck-btn-back" onclick="scBack()">Back</button>';
+            } else {
+                html += '<div></div>';
+            }
+            if (scStep < 11) {
+                const disabled = scAnswers[scStep] === -1 ? ' disabled' : '';
+                html += '<button class="selfcheck-btn selfcheck-btn-next" onclick="scNext()"' + disabled + '>Next</button>';
+            } else {
+                const disabled = scAnswers[scStep] === -1 ? ' disabled' : '';
+                html += '<button class="selfcheck-btn selfcheck-btn-next" onclick="scShowResult()"' + disabled + '>See My Results</button>';
+            }
+            html += '</div>';
+
+            container.innerHTML = html;
+        }
+
+        function selectSCOption(idx) {
+            scAnswers[scStep] = idx;
+            renderSCQuestion();
+        }
+
+        function scNext() {
+            if (scAnswers[scStep] === -1) return;
+            scStep++;
+            renderSCQuestion();
+        }
+
+        function scBack() {
+            scStep--;
+            renderSCQuestion();
+        }
+
+        function scShowResult() {
+            // GHQ-12 binary scoring: options A,B = 0; options C,D = 1. Max score = 12.
+            const total = scAnswers.reduce((a, val) => a + (val >= 2 ? 1 : 0), 0);
+            const container = document.getElementById('selfCheckContent');
+            let emoji, msg;
+
+            if (total <= 1) {
+                emoji = '🌿';
+                msg = "You seem to be doing well! 🌿 Your mental health appears to be in a good place right now. Remember, it's always okay to check in with yourself from time to time. Keep taking care of your well-being!";
+            } else if (total <= 3) {
+                emoji = '💛';
+                msg = "You might be experiencing some mild stress. 💛 It's normal to go through tough phases, but if these feelings continue, talking to a professional could really help. Consider reaching out — even a single session can make a difference.";
+            } else if (total <= 6) {
+                emoji = '🤗';
+                msg = "It looks like you could benefit from some support. 🤗 What you're feeling is valid, and you don't have to go through it alone. We recommend speaking with a mental health professional who can help you navigate what you're going through.";
+            } else {
+                emoji = '💚';
+                msg = "We hear you, and we care. 💚 Your responses suggest you may be going through a really tough time. Please know that help is available, and reaching out is a sign of strength. We strongly encourage you to book a session — you deserve to feel better.";
+            }
+
+            let html = '<div class="selfcheck-result">';
+            html += '<div class="selfcheck-progress"><div class="selfcheck-progress-bar" style="width:100%"></div></div>';
+            html += '<p class="font-poppins text-xs text-charcoal/50" style="margin:1rem 0 0.5rem;">Your Results</p>';
+            html += '<div class="selfcheck-result-emoji">' + emoji + '</div>';
+            html += '<p class="font-lora text-lg text-charcoal leading-relaxed" style="margin-bottom:1.5rem;">' + msg + '</p>';
+            html += '<a href="#contact" onclick="closeSelfCheck()" class="selfcheck-btn selfcheck-btn-next inline-block" style="text-decoration:none;padding:0.85rem 2rem;">Book a Free Consultation</a>';
+            html += '<p class="font-lora text-xs text-charcoal/50" style="margin-top:1.5rem;line-height:1.5;">This self-check is not a clinical diagnosis. It is a simple tool to help you reflect on your well-being. For professional assessment, please consult a licensed psychologist.</p>';
+            html += '</div>';
+
+            container.innerHTML = html;
+        }
+
+        // Form submission is handled by the Google Sheets script below
+    </script>
+
+    
+        <!-- Phone Validation Script -->
+        <script>
+        (function() {
+          document.addEventListener('DOMContentLoaded', function() {
+            var phoneInput = document.getElementById('phoneInput');
+            var phoneError = document.getElementById('phoneError');
+            if (!phoneInput || !phoneError) return;
+
+            function validatePhone() {
+              var raw = phoneInput.value.replace(/[^0-9]/g, '');
+              // Remove leading 91 country code if present
+              if (raw.length > 10 && raw.substring(0, 2) === '91') {
+                raw = raw.substring(2);
+              }
+              if (raw.length === 0) {
+                phoneError.textContent = '⚠ Phone number is required';
+                phoneError.classList.remove('hidden');
+                phoneInput.style.borderColor = '#ef4444';
+                return false;
+              } else if (raw.length < 10) {
+                phoneError.textContent = '⚠ Phone number must be at least 10 digits (you entered ' + raw.length + ')';
+                phoneError.classList.remove('hidden');
+                phoneInput.style.borderColor = '#ef4444';
+                return false;
+              } else if (raw.length > 10) {
+                phoneError.textContent = '⚠ Phone number is too long (max 10 digits after country code)';
+                phoneError.classList.remove('hidden');
+                phoneInput.style.borderColor = '#ef4444';
+                return false;
+              } else {
+                phoneError.classList.add('hidden');
+                phoneInput.style.borderColor = '';
+                return true;
+              }
+            }
+
+            // Validate on blur (when user clicks away)
+            phoneInput.addEventListener('blur', validatePhone);
+
+            // Clear error when user starts typing again
+            phoneInput.addEventListener('input', function() {
+              var raw = phoneInput.value.replace(/[^0-9]/g, '');
+              if (raw.length >= 10 || (raw.length > 10 && raw.substring(0,2) === '91')) {
+                phoneError.classList.add('hidden');
+                phoneInput.style.borderColor = '';
+              }
+            });
+
+            // Block form submit if phone is invalid
+            var form = document.getElementById('contactForm');
+            if (form) {
+              form.addEventListener('submit', function(e) {
+                if (!validatePhone()) {
+                  e.preventDefault();
+                  e.stopImmediatePropagation();
+                  phoneInput.focus();
+                  phoneInput.scrollIntoView({behavior: 'smooth', block: 'center'});
+                  return false;
+                }
+              }, true); // 'true' = capture phase, runs BEFORE the main submit handler
+            }
+          });
+        })();
+        </script>
+
+        <!-- Google Sheets Form Submission -->
+    <script>
+    /* v15-fix: Fire-and-forget form submission — instant 3s response */
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzPqf5NiaPRoWrxMdTcEm6byJZEGJdR0KSloNtYPICEneG9BDfMmN4TLbbMUHk4YkYy/exec';
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var submitBtn = document.getElementById('submitBtn');
+        var spinner   = document.getElementById('loadingSpinner');
+        var btnText   = submitBtn.querySelector('span');
+        var messageDiv = document.getElementById('formMessage');
+        var form = this;
+
+        submitBtn.disabled = true;
+        spinner.classList.remove('hidden');
+        btnText.textContent = 'Sending...';
+        messageDiv.classList.add('hidden');
+
+        /* Rate limiter (5 min cooldown) */
+        try {
+            var lastSub = localStorage.getItem('mnklastsubmit');
+            if (lastSub) {
+                var elapsed = Date.now() - parseInt(lastSub);
+                var cooldown = 300000;
+                if (elapsed < cooldown) {
+                    var remaining = Math.ceil((cooldown - elapsed) / 60000);
+                    messageDiv.className = 'font-poppins text-sm p-4 rounded-xl bg-amber-100 text-amber-800';
+                    messageDiv.innerHTML = '<strong>Please wait ' + remaining + ' minute' + (remaining > 1 ? 's' : '') + '</strong> before submitting another request.';
+                    messageDiv.classList.remove('hidden');
+                    messageDiv.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+                    submitBtn.disabled = false;
+                    spinner.classList.add('hidden');
+                    btnText.textContent = 'Send Message';
+                    return;
+                }
+            }
+        } catch(rateErr) {}
+
+        /* Honeypot */
+        var hp = document.getElementById('mhp');
+        if (hp && hp.value) { submitBtn.disabled = false; spinner.classList.add('hidden'); btnText.textContent = 'Send Message'; return; }
+
+        var formData = new FormData(form);
+
+        /* reCAPTCHA token (4s max, non-blocking) */
+        var recapToken = '';
+        try {
+            if (typeof grecaptcha !== 'undefined') {
+                recapToken = await new Promise(function(resolve) {
+                    var done = false;
+                    try {
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute('6LfE8ossAAAAAA9dWmDVhYtDSEEcEs7Kn4d9-lWW', {action: 'bookappointment'})
+                                .then(function(t) { if (!done) { done = true; resolve(t); } })
+                                .catch(function()  { if (!done) { done = true; resolve(''); } });
+                        });
+                    } catch(e) { if (!done) { done = true; resolve(''); } }
+                    setTimeout(function() { if (!done) { done = true; resolve(''); } }, 4000);
+                });
+            }
+        } catch(re) {}
+        formData.append('recaptchaToken', recapToken);
+        formData.append('ts', String(Date.now()));
+
+        /* Submit via hidden iframe — fire and forget */
+        try {
+            var iframeName = 'mnksubmit_' + Date.now();
+            var iframe = document.createElement('iframe');
+            iframe.name = iframeName;
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            var tempForm = document.createElement('form');
+            tempForm.method = 'POST';
+            tempForm.action = SCRIPT_URL;
+            tempForm.target = iframeName;
+            tempForm.style.display = 'none';
+            for (var pair of formData.entries()) {
+                var inp = document.createElement('input');
+                inp.type = 'hidden';
+                inp.name = pair[0];
+                inp.value = pair[1];
+                tempForm.appendChild(inp);
+            }
+            document.body.appendChild(tempForm);
+            tempForm.submit();
+
+            /* Silent cleanup after 60s */
+            setTimeout(function() {
+                try { document.body.removeChild(iframe); } catch(e) {}
+                try { document.body.removeChild(tempForm); } catch(e) {}
+            }, 60000);
+        } catch(submitErr) {
+            console.log('Submit error:', submitErr);
+        }
+
+        /* Show success after 3 seconds — no waiting for server */
+        setTimeout(function() {
+            spinner.classList.add('hidden');
+            btnText.textContent = 'Send Message';
+            submitBtn.disabled = false;
+            messageDiv.className = 'font-poppins text-sm p-4 rounded-xl bg-green-100 text-green-800';
+            messageDiv.innerHTML = '&#x2713; <strong>Appointment request sent!</strong> We will contact you within 24 hours to confirm. Check your email for a confirmation.';
+            messageDiv.classList.remove('hidden');
+            messageDiv.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+            form.reset();
+            try { localStorage.setItem('mnklastsubmit', String(Date.now())); } catch(e) {}
+
+            /* Auto-fade after 20s */
+            setTimeout(function() {
+                messageDiv.style.transition = 'opacity 0.5s ease';
+                messageDiv.style.opacity = '0';
+                setTimeout(function() { messageDiv.classList.add('hidden'); messageDiv.style.opacity = '1'; }, 500);
+            }, 20000);
+        }, 3000);
+    });
+    </script>
+
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea').forEach(function(f) {
+        f.addEventListener('focus', function() {
+          var msg = document.getElementById('formMessage');
+          if (msg && !msg.classList.contains('hidden') && !msg.classList.contains('bg-amber-100')) msg.classList.add('hidden');
+        });
+      });
+    });
+    </script>
+
+    <!-- Slot Availability Checker v6 with Debug -->
+    <script>
+    (function() {
+        var dateInput = document.querySelector('input[name="date"]');
+        var timeSelect = document.getElementById('timeSelect');
+        var slotMsg = document.getElementById('slotMessage');
+        if (!dateInput || !timeSelect || !slotMsg) { console.log('Slot checker: missing elements', !!dateInput, !!timeSelect, !!slotMsg); return; }
+
+        var ALL_SLOTS = [{v:'09:00',l:'9:00 AM'},{v:'10:00',l:'10:00 AM'},{v:'11:00',l:'11:00 AM'},{v:'13:00',l:'1:00 PM'},{v:'14:00',l:'2:00 PM'},{v:'15:00',l:'3:00 PM'},{v:'16:00',l:'4:00 PM'}];
+
+        function resetSlots() {
+            timeSelect.innerHTML = '<option value="">Select a time slot</option>';
+            ALL_SLOTS.forEach(function(s) { var o=document.createElement('option'); o.value=s.v; o.textContent=s.l; timeSelect.appendChild(o); });
+            slotMsg.className = 'font-poppins text-sm hidden w-full';
+        }
+
+        function showMsg(text, type) {
+            slotMsg.textContent = text;
+            slotMsg.classList.remove('hidden');
+            var base = 'font-poppins text-sm p-3 rounded-xl w-full ';
+            if (type==='error') slotMsg.className = base + 'text-red-700 bg-red-50 border border-red-200';
+            else if (type==='warning') slotMsg.className = base + 'text-amber-700 bg-amber-50 border border-amber-200';
+            else if (type==='debug') slotMsg.className = base + 'text-gray-600 bg-gray-50 border border-gray-200 text-xs';
+            else slotMsg.className = base + 'text-emerald-700 bg-emerald-50 border border-emerald-200';
+        }
+
+        function handleResponse(data) {
+            console.log('Slot check response:', data);
+            timeSelect.innerHTML = '<option value="">Select a time slot</option>';
+            timeSelect.disabled = false;
+
+            // Check if we got real data with version
+            if (!data || !data.version) {
+                showMsg('ERROR: Old code still running. Please redeploy Code.gs with New Version.', 'error');
+                resetSlots();
+                return;
+            }
+
+            var bookedSet = {};
+            (data.bookedSlots || []).forEach(function(s) { bookedSet[s] = true; });
+            var avail = 0;
+
+            // Check if selected date is today — grey out past slots
+            var isToday = false;
+            var nowHHMM = '';
+            if (data.serverDate && data.serverTime) {
+                isToday = (dateInput.value === data.serverDate);
+                nowHHMM = data.serverTime;
+            } else {
+                // Fallback: use browser's local time
+                var now = new Date();
+                var todayStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+                isToday = (dateInput.value === todayStr);
+                nowHHMM = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+            }
+
+            ALL_SLOTS.forEach(function(s) {
+                var o = document.createElement('option');
+                o.value = s.v;
+                if (bookedSet[s.v]) {
+                    o.textContent = s.l + ' \u2014 Booked';
+                    o.disabled = true;
+                    o.style.color = '#999';
+                } else if (isToday && s.v <= nowHHMM) {
+                    o.textContent = s.l + ' \u2014 Passed';
+                    o.disabled = true;
+                    o.style.color = '#bbb';
+                } else {
+                    o.textContent = s.l + ' \u2014 Available';
+                    avail++;
+                }
+                timeSelect.appendChild(o);
+            });
+
+            if (avail === 0 && data.nextAvailable) {
+                var nd = data.nextAvailable;
+                var dt = new Date(nd.date + 'T12:00:00');
+                var ds = dt.toLocaleDateString('en-IN', {weekday:'long',day:'numeric',month:'long',year:'numeric'});
+                showMsg('All slots booked on this date! Next available: ' + ds + ' (' + nd.availableCount + ' slots open)', 'error');
+            } else if (avail === 0) {
+                showMsg('All slots booked. Please try another date.', 'error');
+            } else if (avail <= 3) {
+                showMsg('Only ' + avail + ' slot' + (avail>1?'s':'') + ' left! Book now.', 'warning');
+            } else if (avail < 7) {
+                showMsg(avail + ' of 7 slots available. ' + data.bookedSlots.length + ' booked.', 'info');
+            } else {
+                showMsg('All 7 slots available. [' + data.version + ']', 'info');
+            }
+
+            // Show debug info in console
+            if (data.debug) { console.log('DEBUG:', data.debug.join(' | ')); }
+        }
+
+        dateInput.addEventListener('change', function() {
+            var selectedDate = dateInput.value;
+            if (!selectedDate) { resetSlots(); return; }
+
+            timeSelect.innerHTML = '<option value="">Checking availability...</option>';
+            timeSelect.disabled = true;
+            slotMsg.className = 'font-poppins text-sm hidden w-full';
+
+            var cbName = '_mCb' + Date.now();
+            var timer;
+
+            window[cbName] = function(data) {
+                clearTimeout(timer);
+                handleResponse(data);
+                delete window[cbName];
+                var sc = document.getElementById(cbName);
+                if (sc) sc.remove();
+            };
+
+            var script = document.createElement('script');
+            script.id = cbName;
+            // Validate callback name (alphanumeric only - prevents injection)
+                if (!/^[a-zA-Z_][a-zA-Z0-9_]{0,50}$/ /* FIX: Bug #3 (v14) — Aligned with server-side regex */.test(cbName)) { showMsg('Security error.', 'error'); return; }
+                script.src = SCRIPT_URL + '?action=checkSlots&date=' + encodeURIComponent(selectedDate) + '&callback=' + cbName;
+            script.onerror = function() {
+                clearTimeout(timer);
+                showMsg('Could not check availability. Network error.', 'error');
+                resetSlots();
+                delete window[cbName];
+                script.remove();
+            };
+            document.head.appendChild(script);
+
+            timer = setTimeout(function() {
+                if (window[cbName]) {
+                    showMsg('Availability check timed out. Showing all slots.', 'warning');
+                    resetSlots();
+                    delete window[cbName];
+                }
+                var sc = document.getElementById(cbName);
+                if (sc) sc.remove();
+            }, 15000);
+        });
+
+        // Set min date to today (prevent past date selection)
+        var now = new Date();
+        var minDate = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+        dateInput.setAttribute('min', minDate);
+
+        console.log('Manakar slot checker v7 initialized — past-time blocking enabled');
+    })();
+    </script>
+
+
+
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="selfcheck-overlay" style="z-index:200;">
+      <div class="selfcheck-modal" style="max-width:700px;">
+        <button class="selfcheck-close" onclick="document.getElementById('privacyModal').classList.remove('active');document.body.style.overflow='auto';" aria-label="Close">&times;</button>
+        <div style="padding-top:1rem;">
+          <h2 class="font-poppins text-2xl font-bold text-charcoal mb-4">&#128274; Privacy Policy — Manakar</h2>
+          <p class="font-lora text-sm text-charcoal/60 mb-6">Effective: March 2026 | Compliant with India's Digital Personal Data Protection Act (DPDPA), 2023</p>
+          <div class="font-lora text-charcoal/80 space-y-5 text-sm leading-relaxed">
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">1. Data We Collect</h3>
+              <p>When you submit the appointment form, we collect: <strong>Name, Phone Number, Email Address, Preferred Service, Date &amp; Time, and your Message.</strong> The self-check quiz is completely anonymous — no data is stored.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">2. Purpose of Collection</h3>
+              <p>Your data is used <em>only</em> to: (a) schedule &amp; confirm your appointment, (b) send you an email confirmation, (c) add the appointment to the clinic calendar, and (d) contact you regarding your booking.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">3. Data Storage &amp; Security</h3>
+              <p>All data is stored in a private, password-protected Google Workspace account accessible only to Ms. Sayli A. Kharche (Clinical Psychologist &amp; Clinic Administrator). Data is transmitted over HTTPS encryption. No data is stored on the website itself.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">4. Third-Party Sharing</h3>
+              <p>We <strong>never sell, trade, or share</strong> your personal data with any third party. Your information stays strictly between you and Manakar.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">5. Your Rights (DPDPA 2023)</h3>
+              <p>Under India's Digital Personal Data Protection Act, you have the right to:<br>
+              &#10003; <strong>Access</strong> — Request a copy of your stored data<br>
+              &#10003; <strong>Correction</strong> — Request correction of inaccurate data<br>
+              &#10003; <strong>Erasure</strong> — Request complete deletion of your data<br>
+              &#10003; <strong>Withdraw Consent</strong> — Revoke consent at any time<br>
+              To exercise these rights, email <strong>manakarpsych22@gmail.com</strong> or call <strong>+91 97308 77626</strong>.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">6. Cookies &amp; Tracking</h3>
+              <p>This website uses Google reCAPTCHA for spam protection (governed by Google's Privacy Policy). We use <code>localStorage</code> solely to prevent duplicate form submissions. No analytics cookies are used unless explicitly stated.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">7. Data Retention</h3>
+              <p>Appointment records are retained for 3 years for clinical reference, after which they are permanently deleted unless required by Indian law.</p>
+            </div>
+            <div>
+              <h3 class="font-poppins font-semibold text-charcoal mb-1">8. Contact the Data Fiduciary</h3>
+              <p><strong>Ms. Sayli A. Kharche</strong><br>Manakar — Clinical Psychology Practice<br>Amanora Ascent Tower, Hadapsar, Pune 411028<br>Email: manakarpsych22@gmail.com | Phone: +91 97308 77626</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security: Obfuscate footer email from scrapers -->
+    <script>
+      (function(){
+        var e=document.getElementById('footerEmail');
+        if(e){var a='manakarpsych22';var b='gmail.com';e.textContent=a+'@'+b;}
+      })();
+    </script>
+
+
+    <!-- FIX: Bug #1 (v14) — Removed rate-limiter bypass testing artifact -->
+</body>
+</html>
